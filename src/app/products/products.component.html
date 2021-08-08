@@ -1,8 +1,8 @@
 <mat-accordion multi="true" *ngIf="products.length > 0">
     <mat-card *ngFor="let product of products">
         <mat-card-content>
-            {{product.name}} ${{product.price}}
-            <button mat-raised-button color="primary" (click)="addToCart(product)">Add To Cart</button>
+            <p>{{product.name}} ${{product.price}}</p>
+            <p><button mat-raised-button color="primary" (click)="addToCart(product)">Add To Cart</button></p>
         </mat-card-content>
     </mat-card>
 </mat-accordion>
