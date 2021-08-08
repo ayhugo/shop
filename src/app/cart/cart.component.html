@@ -1,0 +1,18 @@
+<mat-accordion multi="true" *ngIf="cartItems.length > 0">
+    <mat-card *ngFor="let product of cartItems">
+        <mat-card-content>
+            {{product.name}} ({{product.count}}) ${{product.count*product.price | number : '1.2-2'}}
+            <button mat-button (click)="updateCart(product, true)"><mat-icon>add</mat-icon></button>
+            <button mat-button (click)="updateCart(product, false)"><mat-icon>remove</mat-icon></button>
+            <button mat-button (click)="deleteFromCart(product)">Delete</button>
+        </mat-card-content>
+
+    </mat-card>
+    <p>Total: ${{totalCost | number : '1.2-2'}}</p>
+    <br>
+    <button mat-raised-button color="warn" (click)="emptyCart()" >Clear Cart</button>
+</mat-accordion>
+
+
+
+<p class="info-text mat-body-1" *ngIf="cartItems.length <= 0">No Products In Cart</p>
