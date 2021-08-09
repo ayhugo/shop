@@ -18,7 +18,6 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getCart()
     this.cartItems.forEach(item => {
       this.totalCost += (item.price*item.count)
-      console.log(this.totalCost)
     })
 
     this.cartSub = this.cartService.getCartUpdateListener().subscribe(result => {
@@ -26,7 +25,6 @@ export class CartComponent implements OnInit {
       this.cartItems = result.cart
       this.cartItems.forEach(item => {
         this.totalCost += (item.price*item.count)
-        console.log(this.totalCost)
       })
     });
   }

@@ -20,11 +20,8 @@ export class HeaderComponent implements OnInit, OnDestroy{
     this.cartSub = this.cartService.getCartUpdateListener().subscribe(result => {
       this.count = 0
       result.cart.forEach(item => {
-        console.log(item)
         this.count += item.count
       });
-
-      console.log(this.count)
     })
   }
 

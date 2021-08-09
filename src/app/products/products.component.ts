@@ -14,12 +14,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   constructor(public productService: ProductsService, public cartService: CartService) { }
 
   ngOnInit() {
-    const data = this.productService.getProducts();
-
-    data.forEach(element => {
-      const product: Product = {name: element.name, price: element.price}
-      this.products.push(product)
-    });
+    this.products = this.productService.getProducts();
 
   }
 
