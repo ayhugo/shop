@@ -10,23 +10,23 @@ import { CartService } from '../cart.service';
 export class HeaderComponent implements OnInit, OnDestroy{
   constructor(public cartService: CartService) { }
   private cartSub: Subscription = new Subscription;
-  count: number = 0
+  count: number = 0;
   ngOnInit(){
     const cart = this.cartService.getCart()
     cart.forEach(item => {
-      this.count += item.count
+      this.count += item.count;
     });
 
     this.cartSub = this.cartService.getCartUpdateListener().subscribe(result => {
-      this.count = 0
+      this.count = 0;
       result.cart.forEach(item => {
-        this.count += item.count
+        this.count += item.count;
       });
     })
   }
 
   ngOnDestroy(){
-    this.cartSub.unsubscribe()
+    this.cartSub.unsubscribe();
   }
 
 }
