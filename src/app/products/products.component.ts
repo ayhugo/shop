@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from './products.model';
 import { ProductsService } from "../products.service"
 import { CartService } from '../cart.service';
-import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
