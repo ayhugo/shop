@@ -3,7 +3,6 @@ import { Product } from './products.model';
 import { ProductsService } from "../products.service"
 import { CartService } from '../cart.service';
 import { Subscription } from 'rxjs';
-import { MatTab } from '@angular/material/tabs';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
